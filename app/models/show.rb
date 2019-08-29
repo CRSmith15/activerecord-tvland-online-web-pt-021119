@@ -4,8 +4,8 @@ class Show < ActiveRecord::Base
   belongs_to :network
   
   def actors_list
-    self.actors.each do |x, y|
-      "#{x} #{y}"
+    self.actors.collect do |x, y|
+      "#{x.first_name} #{y.last_name}"
     end
   end
   
